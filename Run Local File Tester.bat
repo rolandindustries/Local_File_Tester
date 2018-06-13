@@ -1,0 +1,1 @@
+sqlite3 < local_file_tester.sql
