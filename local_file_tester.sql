@@ -46,6 +46,13 @@ as
 	where "school id"=''
 ;
 
+--Invalid schools dupe ID testing
+select "school id", count("school id"), "school name", count("school name")
+from test_schools
+group by "school id", "school name"
+having (count("school id") > 1 AND count("school name") > 1)
+;
+
 --Make Invalid_Schools table from above checks
 create temp table invalid_schools
 as
